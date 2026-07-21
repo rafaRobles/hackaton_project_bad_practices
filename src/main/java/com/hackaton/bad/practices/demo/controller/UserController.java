@@ -12,6 +12,7 @@ import com.hackaton.bad.practices.demo.entity.Users;
 import com.hackaton.bad.practices.demo.repository.UserRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 @RestController
@@ -20,6 +21,9 @@ public class UserController {
     private final JdbcTemplate jdbcTemplate;
 
     private final UserRepository userRepository;
+
+    @Autowired
+    private UserService userService;
 
     UserController(UserRepository userRepository, JdbcTemplate jdbcTemplate) {
         this.userRepository = userRepository;
@@ -45,6 +49,11 @@ public class UserController {
         user.setEmail(newUser.getEmail());
         user.setPassword(newUser.getPassword());
         return this.userRepository.save(user);
+    }
+
+    @PostMapping("users/addUser")
+    public Users postMethodName(@RequestBody Users newUser) {
+        return this.userService.createUser(newUser);
     }
 
 }
