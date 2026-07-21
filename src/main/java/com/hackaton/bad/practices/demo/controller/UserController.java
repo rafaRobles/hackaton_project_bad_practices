@@ -40,7 +40,10 @@ public class UserController {
 
     @PostMapping("users/add")
     public Users postMethodName(@RequestBody Users newUser) {
-        Users user = new Users(newUser.getId(), newUser.getName(), newUser.getEmail());
+        Users user = new Users();
+        user.setName(newUser.getName());
+        user.setEmail(newUser.getEmail());
+        user.setPassword(newUser.getPassword());
         return this.userRepository.save(user);
     }
 
