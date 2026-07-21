@@ -34,7 +34,7 @@ public class UserController {
 
     @GetMapping("/users/{id}")
     public Users getUser(@PathVariable String id) {
-        String sql = "SELECT * FROM users WHERE id = " + id;  // DANGER!
+        String sql = "SELECT * FROM users WHERE id = " + id;
         return jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(Users.class));
     }
 

@@ -16,6 +16,9 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(
                 (authz) -> authz.requestMatchers("/users/**").permitAll()
+                .requestMatchers("/orders/**").permitAll()
+                .requestMatchers("/h2-console/**").permitAll()
+                .requestMatchers("/payment/**").permitAll()
                 .anyRequest().permitAll()
             );
         return http.build();
