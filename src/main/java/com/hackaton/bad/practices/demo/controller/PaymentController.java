@@ -20,7 +20,7 @@ public class PaymentController {
 
     @PostMapping("payment")
     public String addOrder(@RequestBody PaymentDTO payment) {
-        return this.paymentService.makePayment(payment);
+        return this.paymentService.makePaymentNewMethodasdf(payment);
     }
 
 }

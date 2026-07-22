@@ -19,6 +19,7 @@ public class SecurityConfig {
                 .requestMatchers("/orders/**").permitAll()
                 .requestMatchers("/h2-console/**").permitAll()
                 .requestMatchers("/payment/**").permitAll()
+                .requestMatchers("/sort/**").permitAll()
                 .anyRequest().permitAll()
             );
         return http.build();

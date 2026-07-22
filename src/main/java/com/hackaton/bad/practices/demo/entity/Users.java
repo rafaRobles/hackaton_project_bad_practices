@@ -58,6 +58,13 @@ public class Users implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
+    @Override
+    public String toString() {
+        return "Users [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", getId()="
+                + getId() + ", getName()=" + getName() + ", getEmail()=" + getEmail() + ", getPassword()="
+                + getPassword() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()="
+                + super.toString() + "]";
+    }
 
 }
