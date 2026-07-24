@@ -2,3 +2,4 @@ target/
 data/
 target/classes/com/hackaton/bad/practices/demo/DemoApplication.class
 target/test-classes/com/hackaton/bad/practices/demo/DemoApplicationTests.class
+ai-docs/
